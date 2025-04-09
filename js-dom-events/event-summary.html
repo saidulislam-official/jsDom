@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js Dom Summary</title>
+</head>
+<body>
+<br>
+<button> <a href="index.html">Home Page</a></button>
+<br>
+<br>
+<br>
+<p id="input-text-display">This is default input Text</p>
+<input id="input-field"></input>
+<button id="btn-update">Update</button>
+<br><br>
+<h1 id="handler-status-1">This is Default Text.</h1>
+<button onclick="handleOnClick()">Handle Event by add onclick function</button>
+
+<h4 id="handler-status-2">This is heading Text.</h4>
+<button id="event-listner">Handle Event by addEventListner</button>
+
+<script>
+// option 1
+function handleOnClick() {
+    const heading = document.getElementById('handler-status-1');
+    heading.innerText = 'This is Changed Text.';
+    heading.style.color = 'red';
+    heading.style.fontSize = '30px';
+    heading.style.fontWeight = 'bold';
+}
+// option 2 final
+
+document.getElementById('event-listner').addEventListener('click', function() {
+    const heading = document.getElementById('handler-status-2');
+    heading.innerText = 'This is Changed Text.';
+    heading.style.color = 'blue';
+    heading.style.fontSize = '30px';
+    heading.style.fontWeight = 'bold';
+});
+
+
+// option 2 recap
+
+document.getElementById('btn-update').addEventListener('click', function() {
+    // console.log('Button Clicked');
+    const inputField = document.getElementById('input-field');
+    const inputFieldValue = inputField.value;
+    // console.log(inputFieldValue);
+    const inputTextDisplay = document.getElementById('input-text-display');
+    inputTextDisplay.innerText = inputFieldValue;
+    
+    inputTextDisplay.style.color = 'green';
+    inputTextDisplay.style.fontSize = '30px';
+
+
+    inputField.value = '';
+});
+
+</script>
+</body>
+</html>
